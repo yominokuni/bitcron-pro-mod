@@ -1,0 +1,200 @@
+{
+  "name": "bitcron-pro",
+  "version": "2.0.0",
+  "author": "Serence",
+  "customConfig": [
+	  {
+      "name": "github",
+      "label": "Github",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "twitter",
+      "label": "Twitter",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "zhihu",
+      "label": "知乎",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "weibo",
+      "label": "微博",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "telegram",
+      "label": "Telegram",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+	{
+      "name": "rss",
+      "label": "Rss",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+	{
+      "name": "envelope",
+      "label": "Mail",
+      "group": "社交",
+      "value": "",
+      "type": "input",
+      "note": "链接地址"
+    },
+    {
+      "name": "Santa",
+      "label": " 是否需要圣诞装饰 ",
+      "group": " 特殊功能 ",
+      "value": false,
+      "type": "switch",
+      "note": " 雪花以及圣诞老人效果 "
+    },
+    {
+      "name": "Spring",
+      "label": " 是否需要春节灯笼特效 ",
+      "group": " 特殊功能 ",
+      "value": false,
+      "type": "switch",
+      "note": " 春节灯笼特效 "
+    },
+	{
+		"name": "ga",
+		"label": "跟踪 ID",
+		"group": "谷歌统计",
+		"value": "",
+		"type": "input",
+		"note": "UA-xxxxxxxxx-x"
+	},
+	{
+    "name": "Live2D",
+    "label": "Live2D看板娘",
+    "group": "Live2D",
+    "value": true,
+    "type": "switch",
+    "note": "若不需要，可关闭以加快页面加载速度"
+},
+{
+      "name": "friends",
+      "label": "友链",
+      "group": "友链设置",
+      "type": "array",
+      "value": [],
+      "arrayItems": [
+        { "label": "名称", "name": "siteName", "type": "input", "value": "" },
+        { "label": "链接", "name": "siteLink", "type": "input", "value": "" },
+        { "label": "Logo", "name": "siteLogo", "type": "input", "value": "" },
+        { "label": "描述", "name": "description", "type": "textarea", "value": "" }
+      ],
+      "note": ""
+    },
+{
+      "name": "profiles",
+      "label": "sns链接",
+      "group": "个人页设置",
+      "type": "array",
+      "value": [],
+      "arrayItems": [
+        { "label": "名称", "name": "siteName", "type": "input", "value": "" },
+        { "label": "链接", "name": "siteLink", "type": "input", "value": "" },
+        { "label": "Logo", "name": "siteLogo", "type": "input", "value": "" },
+        { "label": "描述", "name": "description", "type": "textarea", "value": "" }
+      ],
+      "note": ""
+    },	
+{
+            "name": "music",
+            "label": "Music插件",
+            "group": "Music插件",
+            "value": "on",
+            "type": "select",
+            "options": [{
+                    "label": "开",
+                    "value": "on"
+                },
+                {
+                    "label": "关",
+                    "value": "off"
+                }
+            ]
+        },
+        {
+            "name": "musicModel",
+            "label": "吸底 / Mini / 普通 模式(建议吸底模式...其他的待测试)",
+            "group": "Music插件",
+            "value": "fixed",
+            "type": "select",
+            "options": [{
+                    "label": "吸底模式",
+                    "value": "fixed"
+                },
+                {
+                    "label": "Mini模式",
+                    "value": "mini"
+                },
+                {
+                    "label": "普通模式",
+                    "value": "normal"
+                }
+            ]
+        },
+        {
+            "name": "musics",
+            "label": "音乐",
+            "group": "Music插件",
+            "type": "array",
+            "value": [{
+                "description": "",
+                "siteLink": "",
+                "siteLogo": "",
+                "siteName": ""
+            }],
+            "arrayItems": [{
+                    "name": "url",
+                    "label": "歌曲的url地址",
+                    "value": "",
+                    "type": "input",
+                    "note": "请输入歌曲的url地址"
+                },
+                {
+                    "name": "pic",
+                    "label": "歌曲的图片地址",
+                    "value": "",
+                    "type": "input",
+                    "note": "请输入歌曲的图片地址"
+                },
+                {
+                    "name": "name",
+                    "label": "歌曲名",
+                    "value": "",
+                    "type": "input",
+                    "note": "请输入歌曲名"
+                },
+                {
+                    "name": "author",
+                    "label": "歌曲的作者名",
+                    "value": "",
+                    "type": "input",
+                    "note": "请输入歌曲的作者名"
+                }
+            ]
+        }
+  ]
+}
