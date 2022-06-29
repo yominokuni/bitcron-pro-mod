@@ -1,0 +1,73 @@
+<script src="https://cdn.jsdelivr.net/npm/@waline/client@2.0.0"></script>
+<div id="waline"></div>
+<script>
+const locale = {
+	placeholder: '通过审核的评论才会显示^^',
+	sofa: '这里空荡荡的……',
+};
+    Waline({
+      el: '#waline',
+      serverURL: '你的waline评论域名',
+	  emoji: [
+	  'https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-gif',
+	  'https://cdn.jsdelivr.net/gh/norevi/blob-emoji-for-waline@2.0/blobs-png',
+  	  'https://cdn.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs',
+	  'https://cdn.jsdelivr.net/gh/walinejs/emojis/alus',
+	  'https://cdn.jsdelivr.net/gh/yominokuni/my-emoji-for-waline@latest/acfun_emoji/',
+	  'https://cdn.jsdelivr.net/gh/yominokuni/my-emoji-for-waline@latest/%E5%92%AA%E5%AD%90%E9%B1%BC/',
+	  ],
+	  wordLimit: 500,
+	  path: location.pathname,
+      locale,
+});
+
+</script>
+
+<style>
+  :root {
+  /* 主题色 */
+  --waline-theme-color: #F3969A;
+  --waline-active-color: #FFA3A3;
+  --waline-info-bgcolor: #FAF9F7;
+  --waline-bgcolor-light: #FAF9F7;
+  --waline-disable-bgcolor: #FAF9F7;
+  --waline-badge-color: #42C7AD;
+  dark: auto;
+}
+.wl-power a{
+    color: var(--waline-theme-color)!important;
+}	
+.wl-nick {
+color: #e42b2b!important;
+}
+
+.wl-content .vemoji, .wl-content .wl-emoji  {
+        width: auto!important;
+		max-width: 8em !important;
+        max-height: 4.5em !important;
+		margin:.5em;
+	}
+.wl-emoji-popup .wl-tabs {
+		height: 2.5em !important;
+}
+.wl-emoji-popup .wl-emoji {
+    max-width: 2em !important;
+    max-height: 3.5em !important;
+}
+.wl-card {
+    border-bottom: 0;
+}
+.wl-card .wl-quote {
+    border-left: 0;
+}
+.wl-cards .wl-user .verified-icon {
+ display:none;
+}
+
+.wl-editor {
+    font-family: 'Noto Serif SC';
+}
+.wl-header input {
+    font-family: 'Noto Serif SC';
+}
+</style>

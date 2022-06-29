@@ -1,0 +1,29 @@
+
+<a id="scrollUp" href="#top" style="position: fixed; z-index: 2147483647; display: block;"></a><div class="footer animated fadeInDown"><div class="site_footer"><div class="mysocials"><div class="my_socials"><%['telegram','twitter','weibo','github','envelope','rss','zhihu'].forEach((item)=>{%><%if(site.customConfig[item]){%><a href="<%= site.customConfig[item] %>"title="<%= item %>"><i class="iconfont icon-<%= item %>"></i></a><%}%><%})%></div></div>
+<div class="copyright"id="copyright"><%-themeConfig.footerInfo%>Copyright 漏 2021-2022&nbsp;<a rel="me" href="https://wxw.moe/@ajisai" style="margin:0;"><%= themeConfig.siteName %></a>.</d>
+<p>
+<span style="display: inline;margin-right:15px;">馃憗&nbsp;<span id="busuanzi_value_site_uv"></span></span><span id="busuanzi_container_page_pv" style="display: inline;"><span>馃摎&nbsp;<%=site.posts.length%> posts</span>&nbsp;&nbsp;&nbsp;&nbsp;&#x23F3;
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;display=swap" type="text/css" rel="stylesheet">
+<script>
+<!-- 设置建站时间-->
+var urodz = new Date("08/24/2021");
+var now = new Date();
+var ile = now.getTime() - urodz.getTime();
+var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+document.write("<span class=\"myDays\">");document.write(dni+" days");<!-- 统计全站字数暂时不得行 -->document.write(<%=site.posts.words%>);
+</script> &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<%= themeConfig.siteDescription %></d>
+
+</div>
+</div>
+
+
+
+<script>
+console.log("\n %c \u26a1Theme: Bitcron-pro Author's Blog:https://blog.blinkstar.cn  Writen By Serence | Modified By Renai \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;", );</script>
+
+<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+<!-- 这是原本的指向博客超链接<%= themeConfig.domain %> -->
+
+

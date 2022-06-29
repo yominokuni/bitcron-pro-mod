@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--    点击爆炸特效 start-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+    <script src="https://a-oss.zmki.cn/20190502/baozatexiao.js"></script>
+    <!--    点击爆炸特效 ends-->
+	
+<%- include('./_blocks/head', { siteTitle: `Tags | ${themeConfig.siteName}` }) %>
+<link rel="canonical" href="<%= themeConfig.domain %>/tags" />  
+
+</head>
+
+<body>
+
+<%- include('./_blocks/header') %>
+<div class="main"><div class="main-inner"><div class="content"><div class="list_with_title">
+<div class="tags-container"><% tags.forEach((tag, index) => { %>
+<a class="tag" id="tag-<%=index%>" href="<%= tag.link %>"><%= tag.name %></a>
+<% if (index == tags.length - 1) { %> <script>var global_tags_random = <%=index%></script> <% } %>
+<% }); %>
+<script>function getColor()
+{
+var color;//渐变
+for(var xunhuan=0;xunhuan<3;xunhuan++)
+{
+var temp=Math.floor(14*Math.random());
+//switch语句
+switch (temp) {
+    case 0:
+        color = "linear-gradient(to bottom right,#A1FFCE,#FAFFD1)";//如果x==0,则使用这个颜色(Limeade)
+        break;
+    case 1:
+        color = "linear-gradient(to bottom right,#AAFFA9, #11FFBD)";//如果x==1,则使用这个颜色(TealLove)
+         break;
+    case 2:
+        color = "linear-gradient(to bottom right,  #d9a7c7, #fffcdc)";//BrokenHearts
+         break;
+    case 3:
+        color = "linear-gradient(to bottom right,  #ec008c, #fc6767)"; //DIMIGO
+         break;
+    case 4:
+        color = "linear-gradient(to bottom right, #ad5389, #3c1053)";//eXpresso
+         break;
+    case 5:
+        color = "linear-gradient(to bottom right,#3A1C71, #D76D77, #FFAF7B)";//Relay
+         break;
+    case 6:
+        color = "linear-gradient(to bottom right, #a7a8bd, #f7f4ed)";//MegaTron
+         break;
+    case 7:
+        color = "linear-gradient(to bottom right, #C6FFDD, #FBD786, #f7797d)";//糖果色
+         break;
+    case 8:
+        color = "linear-gradient(to bottom right, #43C6AC, #F8FFAE)";//糖果色
+         break;
+    case 9:
+        color = "linear-gradient(to bottom right, #D3959B, #BFE6BA)";//糖果色
+         break;
+    case 10:
+        color = "linear-gradient(to bottom right, #a8ff78, #78ffd6)";//糖果色
+         break;
+    case 11:
+        color = "linear-gradient(to bottom right, #D66D75, #E29587)";//Shalala
+         break;
+    case 12:
+        color = "linear-gradient(to bottom right, #E8CBC0, #636FA4)";//RoseColoredLenses
+         break;
+    case 13:
+        color = "linear-gradient(to bottom right, #ffd89b, #19547b)";//Jupiter
+         break;
+    case 14:
+        color = "linear-gradient(to bottom right, #360033, #0b8793)";//PurpleBliss
+         break;
+}
+}
+for(xunhuan=0;xunhuan<=global_tags_random;xunhuan++)
+{var temp=document.getElementById("tag-"+xunhuan.toString());temp.style.backgroundColor=getColor()}}</script>
+</div></div></div></div></div>
+<%- include('./_blocks/footer') %>
+</body>
+</html>

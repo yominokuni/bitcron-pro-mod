@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--    点击爆炸特效 start-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+    <script src="https://a-oss.zmki.cn/20190502/baozatexiao.js"></script>
+    <!--    点击爆炸特效 ends-->
+
+    <%- include('./_blocks/head', { siteTitle: themeConfig.siteName }) %>
+    <script src="/media/gridea-search/fuse.js"></script>
+    <script src="/media/gridea-search/ejs.min.js"></script>
+    <script src="/media/gridea-search/gridea-search.js"></script>
+    <script src="/media/gridea-search/result-template.ejs" type="text/ejs"></script>
+
+
+</head>
+<body>
+
+    <style>
+        .searched-keyword {
+            background-color: yellow;
+        }
+    </style>
+    <div class="main animated">
+        <%- include('./_blocks/header') %>
+		<div class="main"><div class="main-inner"><div class="content"><div class="round-shape-one"></div>
+        <div id="gridea-search-result">	
+            <p class="searching">搜索中......</p>
+            <p class="no-result" style="display:none">未搜索到相关文章</p>
+        </div>
+		</div></div></div>
+    </div>
+    <%- include('./_blocks/footer') %>
+</body>
+</html>

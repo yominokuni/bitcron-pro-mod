@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="referrer" content="never">
+
+    <!--    点击爆炸特效 start-->
+    <canvas class="fireworks" style="position:fixed;left:0;top:0;z-index:99999999;pointer-events:none;"></canvas>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://a-oss.zmki.cn/20190502/baozatexiao.js"></script>
+    <!--    点击爆炸特效 ends-->
+
+
+<%- include('./_blocks/head', { siteTitle: `${post.title} | ${themeConfig.siteName}` }) %>
+<link rel="canonical" href="<%= post.link %>" />
+
+
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/codeBlock/codeBLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="<%= themeConfig.domain %>/media/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+
+</head>
+
+<body>
+
+<%- include('./_blocks/header') %>
+
+
+
+<div class="main"><div class="main-inner"><div class="content">
+<article class="post">
+<h2 class="post_title sm_margin"><a><%= post.title %></a></h2>
+<script>function lan(){if(document.getElementById("lan").innerText=="繁"){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s)}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://cdn.jsdelivr.net/gh/qyxtim/Static@1.1/bookmarklet_tw.js";s.id="tongwenlet_cn";document.body.appendChild(s);document.getElementById("lan").innerHTML="简"}else{if(document.getElementById("lan").innerText=="簡"){var s=document.getElementById("tongwenlet_cn");if(s!=null){document.body.removeChild(s)}var s=document.createElement("script");s.language="javascript";s.type="text/javascript";s.src="https://cdn.jsdelivr.net/gh/qyxtim/Static@1.1/bookmarklet_cn.js";s.id="tongwenlet_cn";document.body.appendChild(s);document.getElementById("lan").innerHTML="繁"}}};</script>
+<section class="post_details"><i class="iconfont icon-calendar"></i><span style="margin-right:15px"> <%= post.dateFormat %></span><i class="iconfont icon-browse"></i><span style="margin-right:15px"> <span id="busuanzi_value_page_pv"></span> Views</span><i class="iconfont icon-category"></i><span class="weaklink" style="margin-right:15px"><% post.tags.forEach(function(tag, index) { %>	<a href="<%= tag.link %>" class="tag"><%= tag.name %></a><% if (index !== post.tags.length - 1) { %> | <% } %><%});%></span><i class="iconfont icon-caret-down"></i><span style="margin-right:15px"><%= post.stats.words %>字</span><i class="iconfont icon-naozhong"></i><span style="margin-right:15px"><%= post.stats.text %></span><a id="lan" href="javascript:void(0);"onclick="lan();"title="调整简繁体" style="margin-right:15px;">繁</a>
+<%if(post.isTop){ %><font color=7D26CD>置顶</font><%}%></section>
+<% if (themeConfig.showFeatureImage && post.feature) { %>
+<img class="featureImg" alt="featureimg" src="<%= post.feature %>" referrerpolicy="no-referrer">
+<% } %>
+<div style="display:flex">
+<div class="md_block" id="md_block">
+<div class="round-shape-one"></div>
+
+
+<%- post.content %>
+
+<span id="footnote"></span>
+<div id = "warn"></div>
+</div>
+<div class="toc-container"><%- post.toc %></div>
+</div>
+<div id="fullPage"><canvas id="canvas"></canvas></div>
+
+</article>
+<div id="eof"><span>EOF</span></div><div class="round-shape-one"></div>
+<section>
+<div class="doc_comments">
+<%- include('./_blocks/waline') %>
+<% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+	  <% if (commentSetting.commentPlatform === 'gitalk') { %>
+		<div id="gitalk-container"></div>
+		<%- include('./_blocks/gitalk') %>
+	  <% } %>
+		  
+	  <% if (commentSetting.commentPlatform === 'disqus') { %>
+		<%- include('./_blocks/disqus') %>
+	  <% } %>
+<% } %>
+</div></section>
+</div></div></div>
+
+<script>
+
+let mainNavLinks=document.querySelectorAll(".markdownIt-TOC a");window.addEventListener("scroll",event=>{let fromTop=window.scrollY;mainNavLinks.forEach((link,index)=>{let section=document.getElementById(decodeURI(link.hash).substring(1));let nextSection=null
+if(mainNavLinks[index+1]){nextSection=document.getElementById(decodeURI(mainNavLinks[index+1].hash).substring(1));}
+if(section.offsetTop<=fromTop){if(nextSection){if(nextSection.offsetTop>fromTop){link.classList.add("currentToc");}else{link.classList.remove("currentToc");}}else{link.classList.add("currentToc");}}else{link.classList.remove("currentToc");}});});
+var h=document.documentElement,b=document.body,st="scrollTop",sh="scrollHeight",progress=document.querySelector(".progress"),scroll;document.addEventListener("scroll",function(){scroll=(h[st]||b[st])/((h[sh]||b[sh])-h.clientHeight)*100;progress.style.setProperty("--scroll",scroll+"%")});
+
+</script>
+<%- include('./_blocks/footer') %>
+<script type="text/javascript" async src="<%= themeConfig.domain %>/media/js/prism.js"></script>
+</body>
+</html>
+
+<script>
+
+//豆瓣图书电影条目
+$(".post-content a[href*='douban.com/subject/']").each(function(){var _this=$(this);var str=_this.attr("href");var db_reg=/^https\:\/\/(movie|book)\.douban\.com\/subject\/([0-9]+)\/?/;if(db_reg.test(str)){var db_type=str.replace(db_reg,"$1");var db_id=str.replace(db_reg,"$2").toString();var db_api="https://douban.edui.fun/";if(db_type=='movie'){var ls_item='movie'+db_id;var url=db_api+"movies/"+db_id;if(localStorage.getItem(ls_item)==null||localStorage.getItem(ls_item)=='undefined'){$.ajax({url:url,type:'GET',dataType:"json",success:function(data){localStorage.setItem(ls_item,JSON.stringify(data));moiveShow(_this,ls_item)}})}else{moiveShow(_this,ls_item)}}else if(db_type=='book'){var ls_item='book'+db_id;var url=db_api+"v2/book/id/"+db_id;if(localStorage.getItem(ls_item)==null||localStorage.getItem(ls_item)=='undefined'){$.ajax({url:url,type:'GET',dataType:'json',success:function(data){localStorage.setItem('book'+db_id,JSON.stringify(data));bookShow(_this,ls_item)}})}else{bookShow(_this,ls_item)}}}});function moiveShow(_this,ls_item){var storage=localStorage.getItem(ls_item);var data=JSON.parse(storage);var str=_this.attr("href");console.log(data)var db_star=Math.ceil(data.rating);$("<div class='post-preview'><div class='post-preview--meta'><div class='post-preview--middle'><h4 class='post-preview--title'><a target='_blank' href='"+str+"'>《"+data.name+"》</a></h4><div class='rating'><div class='rating-star allstar"+db_star+"'></div><div class='rating-average'>"+data.rating+"</div></div><time class='post-preview--date'>导演："+data.director+" / 类型："+data.genre+" / "+data.year+"</time><section style='max-height:75px;overflow:hidden;' class='post-preview--excerpt'>"+data.intro.replace(/\s*/g,"")+"</section></div></div><img referrer-policy='no-referrer' loading='lazy' class='post-preview--image' src="+data.img+"></div>").replaceAll(_this)}function bookShow(_this,ls_item){var storage=localStorage.getItem(ls_item);var data=JSON.parse(storage);var str=_this.attr("href");var db_star=Math.ceil(data.rating.average);$("<div class='post-preview'><div class='post-preview--meta'><div class='post-preview--middle'><h4 class='post-preview--title'><a target='_blank' href='"+str+"'>《"+data.title+"》</a></h4><div class='rating'><div class='rating-star allstar"+db_star+"'></div><div class='rating-average'>"+data.rating.average+"</div></div><time class='post-preview--date'>作者："+data.author+" </time><section style='max-height:75px;overflow:hidden;' class='post-preview--excerpt'>"+data.summary.replace(/\s*/g,"")+"</section></div></div><img referrer-policy='no-referrer' loading='lazy' class='post-preview--image' src="+data.images.medium+"></div>").replaceAll(_this)}
+</script>
+
