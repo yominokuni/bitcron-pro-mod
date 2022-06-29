@@ -20,7 +20,14 @@
 - [x] 添加Walne评论。
 - [x] 统一风格化的404页面（请单独放进static文件夹并替换原有404.html文件）
 
+![图1](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD.jpg)
+![图2](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(1).jpg)
+![图3](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(2).jpg)
+![图4](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(3).jpg)
+![图5](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(4).jpg)
+![图2](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(5).jpg)
 
+仅供参考，自用魔改，代码其实很乱，不好改。
 
 
 以下为原主题信息。
