@@ -1,3 +1,10 @@
+[我的博客](https://akaito.xyz/)
+[修改了的部分内容纪录](https://akaito.xyz/post/Customize/)
+
+以下为原主题信息。
+
+---
+
 # Bitcron-pro
 [我的博客](https://blog.blinkstar.cn) 
 
