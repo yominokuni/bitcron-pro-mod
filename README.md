@@ -27,7 +27,7 @@
 ![图5](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(4).jpg)
 ![图2](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(5).jpg)
 
-仅供参考，自用魔改，代码其实很乱，不好改。
+仅供参考，自用魔改。
 
 
 以下为原主题信息。
