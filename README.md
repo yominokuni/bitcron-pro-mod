@@ -17,8 +17,7 @@
 - [x] 代码块样式改为Mac Panel.
 - [x] 修改表格样式。
 - [x] 添加脚注样式。
-- [x] 添加Walne评论。
-- [x] 统一风格化的404页面（请单独放进static文件夹并替换原有404.html文件）
+- [x] 添加Walne评论。(没在配置文件里，不能在Gridea可视化界面里修改，直接到templates\_blocks文件夹里修改waline内容)
 
 ![图1](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD.jpg)
 ![图2](https://cdn.jsdelivr.net/gh/yominokuni/bitcron-pro-mod@master/%E4%B8%8B%E8%BD%BD%20(1).jpg)
